@@ -2,9 +2,9 @@
 <!-- Copyright (c) Dr. Jody Paul
      This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
      http://creativecommons.org/licenses/by-sa/4.0/ -->
-<project name="DecisionSupport" basedir="." default="main">
+<project name="DecisionAid" basedir="." default="main">
   <description>
-    Build file for Decision Support product
+    Build file for Decision Aid product
   </description>
   <property name="version" value="20241208"/>
   <property name="author" value="Dr. Jody Paul"/>
