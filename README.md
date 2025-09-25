@@ -1,2 +1,2 @@
-# DecisionAid39AF
-Practice application for CS39AF
+# Decision Aid
+Practice application for CS39AF (Fall 2025)
