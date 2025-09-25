@@ -45,21 +45,28 @@ public class AntCUI extends UserInterface {
     public void getFactorRankings(final List<Factor> factors,
                                   final int standard) {
         Scanner sc = new Scanner(System.in);
-        int firstAttribute = 0;
-        factors.get(firstAttribute).setRank(standard);
-        System.out.println("\n\nAssume that "
-            + factors.get(firstAttribute).getName()
-            + " has an importance of " + standard + ",\n"
-            + "    and that higher values are more important.\n");
-        for (int i = firstAttribute + 1; i < factors.size(); i++) {
-             System.out.println("        How important is "
-                              + factors.get(i).getName() + "? ");
-             String importance = sc.nextLine();
-             if (importance == null || "".equals(importance)) {
-                 factors.get(i).setRank(standard);
-             } else {
-                 factors.get(i).setRank(Integer.valueOf(importance));
-             }
+        // Use a mid-point baseline of 50 so the comparee is not set to the max.
+        final int baseline = Math.min(50, standard);
+        for (int i = 0; i < factors.size(); i++) {
+            while (true) {
+                System.out.println("How important is '" + factors.get(i).getName() + "' on a scale 0.." + standard + " (default " + baseline + "): ");
+                String importance = sc.nextLine();
+                if (importance == null || "".equals(importance)) {
+                    factors.get(i).setRank(baseline);
+                    break;
+                }
+                try {
+                    int v = Integer.parseInt(importance);
+                    if (v < 0 || v > standard) {
+                        System.out.println("Please enter a whole number between 0 and " + standard + ".");
+                        continue;
+                    }
+                    factors.get(i).setRank(v);
+                    break;
+                } catch (NumberFormatException nfe) {
+                    System.out.println("Please enter a whole number for importance, or press Enter to accept default (" + baseline + ")");
+                }
+            }
         }
     }
 
@@ -71,21 +78,26 @@ public class AntCUI extends UserInterface {
         double[][] crossRankings =
                     new double[alternatives.size()][factors.size()];
         for (int i = 0; i < factors.size(); i++) {
-            int firstAlternative = 0;
-            crossRankings[firstAlternative][i] = standard;
-            System.out.println("\n\nConsidering " + factors.get(i).getName()
-                + " only...");
-            System.out.println("    if "
-                    + alternatives.get(firstAlternative).getDescriptor()
-                    + " has a value of " + standard + "... ");
-            for (int j = firstAlternative + 1; j < alternatives.size(); j++) {
-                System.out.println("        ...what value would you associate"
-                    + "with " + alternatives.get(j).getDescriptor() + ": ");
-                String rank = sc.nextLine();
-                if (rank == null || "".equals(rank)) {
-                    crossRankings[j][i] = standard;
-                } else {
-                    crossRankings[j][i] = Integer.valueOf(rank);
+            System.out.println("\n\nConsidering factor: " + factors.get(i).getName());
+            for (int j = 0; j < alternatives.size(); j++) {
+                while (true) {
+                    System.out.println("Enter a value for '" + alternatives.get(j).getDescriptor() + "' on a scale 0.." + standard + " (default 10): ");
+                    String rank = sc.nextLine();
+                    if (rank == null || "".equals(rank)) {
+                        crossRankings[j][i] = 10.0;
+                        break;
+                    }
+                    try {
+                        double v = Double.parseDouble(rank);
+                        if (v < 0 || v > standard) {
+                            System.out.println("Please enter a numeric value between 0 and " + standard + ".");
+                            continue;
+                        }
+                        crossRankings[j][i] = v;
+                        break;
+                    } catch (NumberFormatException nfe) {
+                        System.out.println("Please enter a numeric value (or press Enter to accept default 10)");
+                    }
                 }
             }
         }
@@ -100,6 +112,23 @@ public class AntCUI extends UserInterface {
         System.out.println("-----");
         for (Alternative a : alternatives) {
             System.out.println(a);
+        }
+    }
+
+    @Override
+    public int getScale() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter baseline scale for comparisons (positive integer, default 100): ");
+        String s = sc.nextLine();
+        if (s == null || "".equals(s)) {
+            return 100;
+        }
+        try {
+            int v = Integer.parseInt(s);
+            return v > 0 ? v : 100;
+        } catch (NumberFormatException nfe) {
+            System.out.println("Invalid input. Using default scale 100.");
+            return 100;
         }
     }
 }

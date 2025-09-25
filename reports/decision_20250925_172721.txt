@@ -1,0 +1,13 @@
+--- DecisionAid run: 2025-09-25 17:27:21 ---
+Factors and ranks:
+  Cost -> 75
+  Usage -> 10
+Alternatives and final scores:
+  C == 100
+  B == 80
+  A == 39
+Cross-rankings (alternatives x factors):
+  C: 10.0,10.0
+  B: 19.0,40.0
+  A: 25.0,33.0
+

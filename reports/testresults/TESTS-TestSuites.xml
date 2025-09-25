@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+  <testsuite errors="0" failures="0" hostname="AustynsZenBook" id="0" name="JUnit Jupiter" package="" skipped="0" tests="11" time="0.056" timestamp="2025-09-25T17:42:15">
+    <properties>
+      <property name="file.encoding" value="UTF-8" />
+
+      <property name="file.separator" value="\" />
+
+      <property name="java.class.path" value="C:\Users\bohic\OneDrive\Documents\DecisionAid39AF\build\classes;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-antlr.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-apache-bcel.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-apache-bsf.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-apache-log4j.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-apache-oro.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-apache-regexp.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-apache-resolver.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-apache-xalan2.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-commons-logging.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-commons-net.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-imageio.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-jai.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-jakartamail.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-javamail.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-jdepend.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-jmf.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-jsch.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-junit.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-junit4.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-junitlauncher.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-launcher.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-netrexx.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-swing.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-testutil.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-xz.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant.jar;C:\Users\bohic\OneDrive\Documents\DecisionAid39AF\lib\checkstyle.jar;C:\Users\bohic\OneDrive\Documents\DecisionAid39AF\lib\junit-platform-console-standalone-1.7.0.jar" />
+
+      <property name="java.class.version" value="69.0" />
+
+      <property name="java.home" value="C:\Program Files\Eclipse Adoptium\jdk-25.0.0.36-hotspot" />
+
+      <property name="java.io.tmpdir" value="C:\Users\bohic\AppData\Local\Temp\" />
+
+      <property name="java.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-25.0.0.36-hotspot\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Eclipse Adoptium\jdk-25.0.0.36-hotspot\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\Users\bohic\AppData\Local\Programs\Python\Python312\;C:\Users\bohic\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\heroku\bin;C:\Users\bohic\AppData\Local\Microsoft\WindowsApps;;c:\Users\bohic\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;C:\Program Files\Graphviz\bin;C:\Program Files\Graphviz\bin;c:\Users\bohic\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;C:\Program Files\Eclipse Adoptium\jdk-25.0.0.36-hotspot\;c:\Users\bohic\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\Users\bohic\AppData\Local\Programs\Python\Python312\;C:\Users\bohic\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\heroku\bin;C:\Users\bohic\AppData\Local\Microsoft\WindowsApps;;c:\Users\bohic\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;C:\Program Files\Graphviz\bin;C:\Program Files\Graphviz\bin;c:\Users\bohic\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;C:\Program Files\Eclipse Adoptium\jdk-25.0.0.36-hotspot\;C:\Users\bohic\Tools\apache-ant-1.10.15\bin;." />
+
+      <property name="java.runtime.name" value="OpenJDK Runtime Environment" />
+
+      <property name="java.runtime.version" value="25+36-LTS" />
+
+      <property name="java.specification.name" value="Java Platform API Specification" />
+
+      <property name="java.specification.vendor" value="Oracle Corporation" />
+
+      <property name="java.specification.version" value="25" />
+
+      <property name="java.vendor" value="Eclipse Adoptium" />
+
+      <property name="java.vendor.url" value="https://adoptium.net/" />
+
+      <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues" />
+
+      <property name="java.vendor.version" value="Temurin-25+36" />
+
+      <property name="java.version" value="25" />
+
+      <property name="java.version.date" value="2025-09-16" />
+
+      <property name="java.vm.compressedOopsMode" value="Zero based" />
+
+      <property name="java.vm.info" value="mixed mode, sharing" />
+
+      <property name="java.vm.name" value="OpenJDK 64-Bit Server VM" />
+
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+
+      <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+
+      <property name="java.vm.specification.version" value="25" />
+
+      <property name="java.vm.vendor" value="Eclipse Adoptium" />
+
+      <property name="java.vm.version" value="25+36-LTS" />
+
+      <property name="jdk.debug" value="release" />
+
+      <property name="line.separator" value=" " />
+
+      <property name="native.encoding" value="Cp1252" />
+
+      <property name="os.arch" value="amd64" />
+
+      <property name="os.name" value="Windows 11" />
+
+      <property name="os.version" value="10.0" />
+
+      <property name="path.separator" value=";" />
+
+      <property name="stderr.encoding" value="Cp1252" />
+
+      <property name="stdin.encoding" value="Cp1252" />
+
+      <property name="stdout.encoding" value="Cp1252" />
+
+      <property name="sun.arch.data.model" value="64" />
+
+      <property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-25.0.0.36-hotspot\bin" />
+
+      <property name="sun.cpu.endian" value="little" />
+
+      <property name="sun.cpu.isalist" value="amd64" />
+
+      <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+
+      <property name="sun.java.command" value="org.junit.platform.console.ConsoleLauncher --scan-classpath --reports-dir C:\Users\bohic\OneDrive\Documents\DecisionAid39AF\reports\testresults" />
+
+      <property name="sun.java.launcher" value="SUN_STANDARD" />
+
+      <property name="sun.jnu.encoding" value="Cp1252" />
+
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+
+      <property name="sun.os.patch.level" value="" />
+
+      <property name="user.country" value="US" />
+
+      <property name="user.dir" value="C:\Users\bohic\OneDrive\Documents\DecisionAid39AF" />
+
+      <property name="user.home" value="C:\Users\bohic" />
+
+      <property name="user.language" value="en" />
+
+      <property name="user.name" value="bohic" />
+
+      <property name="user.script" value="" />
+
+      <property name="user.timezone" value="America/Denver" />
+
+      <property name="user.variant" value="" />
+
+    </properties>
+
+    <testcase classname="FactorTest" name="getRankTest()" time="0.017">
+      <system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:FactorTest]/[method:getRankTest()]
+display-name: getRankTest()
+]]></system-out>
+
+    </testcase>
+
+    <testcase classname="FactorTest" name="getNameTest()" time="0.002">
+      <system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:FactorTest]/[method:getNameTest()]
+display-name: getNameTest()
+]]></system-out>
+
+    </testcase>
+
+    <testcase classname="FactorTest" name="setAndGetName()" time="0">
+      <system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:FactorTest]/[method:setAndGetName()]
+display-name: setAndGetName()
+]]></system-out>
+
+    </testcase>
+
+    <testcase classname="AlternativeTest" name="getDescriptionTest()" time="0">
+      <system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:AlternativeTest]/[method:getDescriptionTest()]
+display-name: getDescriptionTest()
+]]></system-out>
+
+    </testcase>
+
+    <testcase classname="AlternativeTest" name="toStringTest()" time="0.002">
+      <system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:AlternativeTest]/[method:toStringTest()]
+display-name: toStringTest()
+]]></system-out>
+
+    </testcase>
+
+    <testcase classname="AlternativeTest" name="setAndGetFinalScore()" time="0">
+      <system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:AlternativeTest]/[method:setAndGetFinalScore()]
+display-name: setAndGetFinalScore()
+]]></system-out>
+
+    </testcase>
+
+    <testcase classname="AlternativeTest" name="getFinalScoreTest()" time="0.001">
+      <system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:AlternativeTest]/[method:getFinalScoreTest()]
+display-name: getFinalScoreTest()
+]]></system-out>
+
+    </testcase>
+
+    <testcase classname="DecisionAidTest" name="normalizeAndSetFinalScoreTest()" time="0.002">
+      <system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:DecisionAidTest]/[method:normalizeAndSetFinalScoreTest()]
+display-name: normalizeAndSetFinalScoreTest()
+]]></system-out>
+
+    </testcase>
+
+    <testcase classname="DecisionAidTest" name="sortDescendingTest()" time="0.001">
+      <system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:DecisionAidTest]/[method:sortDescendingTest()]
+display-name: sortDescendingTest()
+]]></system-out>
+
+    </testcase>
+
+    <testcase classname="DecisionAidTest" name="normalizeWithinEachFactorTest()" time="0">
+      <system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:DecisionAidTest]/[method:normalizeWithinEachFactorTest()]
+display-name: normalizeWithinEachFactorTest()
+]]></system-out>
+
+    </testcase>
+
+    <testcase classname="DecisionAidTest" name="computeWeightedSumForEachAlternativeTest()" time="0">
+      <system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:DecisionAidTest]/[method:computeWeightedSumForEachAlternativeTest()]
+display-name: computeWeightedSumForEachAlternativeTest()
+]]></system-out>
+
+    </testcase>
+
+    <system-out><![CDATA[
+unique-id: [engine:junit-jupiter]
+display-name: JUnit Jupiter
+]]></system-out>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="AustynsZenBook" id="1" name="JUnit Vintage" package="" skipped="0" tests="0" time="0.001" timestamp="2025-09-25T17:42:15">
+    <properties>
+      <property name="file.encoding" value="UTF-8" />
+
+      <property name="file.separator" value="\" />
+
+      <property name="java.class.path" value="C:\Users\bohic\OneDrive\Documents\DecisionAid39AF\build\classes;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-antlr.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-apache-bcel.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-apache-bsf.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-apache-log4j.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-apache-oro.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-apache-regexp.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-apache-resolver.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-apache-xalan2.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-commons-logging.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-commons-net.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-imageio.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-jai.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-jakartamail.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-javamail.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-jdepend.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-jmf.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-jsch.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-junit.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-junit4.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-junitlauncher.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-launcher.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-netrexx.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-swing.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-testutil.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant-xz.jar;C:\Users\bohic\Tools\apache-ant-1.10.15\lib\ant.jar;C:\Users\bohic\OneDrive\Documents\DecisionAid39AF\lib\checkstyle.jar;C:\Users\bohic\OneDrive\Documents\DecisionAid39AF\lib\junit-platform-console-standalone-1.7.0.jar" />
+
+      <property name="java.class.version" value="69.0" />
+
+      <property name="java.home" value="C:\Program Files\Eclipse Adoptium\jdk-25.0.0.36-hotspot" />
+
+      <property name="java.io.tmpdir" value="C:\Users\bohic\AppData\Local\Temp\" />
+
+      <property name="java.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-25.0.0.36-hotspot\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Eclipse Adoptium\jdk-25.0.0.36-hotspot\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\Users\bohic\AppData\Local\Programs\Python\Python312\;C:\Users\bohic\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\heroku\bin;C:\Users\bohic\AppData\Local\Microsoft\WindowsApps;;c:\Users\bohic\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;C:\Program Files\Graphviz\bin;C:\Program Files\Graphviz\bin;c:\Users\bohic\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;C:\Program Files\Eclipse Adoptium\jdk-25.0.0.36-hotspot\;c:\Users\bohic\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\Users\bohic\AppData\Local\Programs\Python\Python312\;C:\Users\bohic\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\heroku\bin;C:\Users\bohic\AppData\Local\Microsoft\WindowsApps;;c:\Users\bohic\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;C:\Program Files\Graphviz\bin;C:\Program Files\Graphviz\bin;c:\Users\bohic\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;C:\Program Files\Eclipse Adoptium\jdk-25.0.0.36-hotspot\;C:\Users\bohic\Tools\apache-ant-1.10.15\bin;." />
+
+      <property name="java.runtime.name" value="OpenJDK Runtime Environment" />
+
+      <property name="java.runtime.version" value="25+36-LTS" />
+
+      <property name="java.specification.name" value="Java Platform API Specification" />
+
+      <property name="java.specification.vendor" value="Oracle Corporation" />
+
+      <property name="java.specification.version" value="25" />
+
+      <property name="java.vendor" value="Eclipse Adoptium" />
+
+      <property name="java.vendor.url" value="https://adoptium.net/" />
+
+      <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues" />
+
+      <property name="java.vendor.version" value="Temurin-25+36" />
+
+      <property name="java.version" value="25" />
+
+      <property name="java.version.date" value="2025-09-16" />
+
+      <property name="java.vm.compressedOopsMode" value="Zero based" />
+
+      <property name="java.vm.info" value="mixed mode, sharing" />
+
+      <property name="java.vm.name" value="OpenJDK 64-Bit Server VM" />
+
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+
+      <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+
+      <property name="java.vm.specification.version" value="25" />
+
+      <property name="java.vm.vendor" value="Eclipse Adoptium" />
+
+      <property name="java.vm.version" value="25+36-LTS" />
+
+      <property name="jdk.debug" value="release" />
+
+      <property name="line.separator" value=" " />
+
+      <property name="native.encoding" value="Cp1252" />
+
+      <property name="os.arch" value="amd64" />
+
+      <property name="os.name" value="Windows 11" />
+
+      <property name="os.version" value="10.0" />
+
+      <property name="path.separator" value=";" />
+
+      <property name="stderr.encoding" value="Cp1252" />
+
+      <property name="stdin.encoding" value="Cp1252" />
+
+      <property name="stdout.encoding" value="Cp1252" />
+
+      <property name="sun.arch.data.model" value="64" />
+
+      <property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-25.0.0.36-hotspot\bin" />
+
+      <property name="sun.cpu.endian" value="little" />
+
+      <property name="sun.cpu.isalist" value="amd64" />
+
+      <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+
+      <property name="sun.java.command" value="org.junit.platform.console.ConsoleLauncher --scan-classpath --reports-dir C:\Users\bohic\OneDrive\Documents\DecisionAid39AF\reports\testresults" />
+
+      <property name="sun.java.launcher" value="SUN_STANDARD" />
+
+      <property name="sun.jnu.encoding" value="Cp1252" />
+
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+
+      <property name="sun.os.patch.level" value="" />
+
+      <property name="user.country" value="US" />
+
+      <property name="user.dir" value="C:\Users\bohic\OneDrive\Documents\DecisionAid39AF" />
+
+      <property name="user.home" value="C:\Users\bohic" />
+
+      <property name="user.language" value="en" />
+
+      <property name="user.name" value="bohic" />
+
+      <property name="user.script" value="" />
+
+      <property name="user.timezone" value="America/Denver" />
+
+      <property name="user.variant" value="" />
+
+    </properties>
+
+    <system-out><![CDATA[
+unique-id: [engine:junit-vintage]
+display-name: JUnit Vintage
+]]></system-out>
+
+  </testsuite>
+</testsuites>

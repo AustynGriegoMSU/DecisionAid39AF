@@ -1,0 +1,10 @@
+--- DecisionAid run: 2025-09-25 17:42:59 ---
+Factors and ranks:
+  Mood -> 50
+Alternatives and final scores:
+  Hot \ == 100
+  Cold == 67
+Cross-rankings (alternatives x factors):
+  Hot \: 67.0
+  Cold: 45.0
+

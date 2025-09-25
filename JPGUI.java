@@ -61,23 +61,44 @@ public class JPGUI extends UserInterface {
     public void getFactorRankings(final List<Factor> factorList,
                                   final int standard) {
         int lastFactor = factorList.size() - 1;
+        // Use a mid-point baseline of 50 so the comparee is not set to the max.
+        final int baseline = Math.min(50, standard);
         for (int i = 0; i < lastFactor; i++) {
-            String importance = JOptionPane.showInputDialog(
-                "<HTML>If <B><SIZE=+1>"
-                + factorList.get(lastFactor).getName()
-                + "</SIZE></B> has an <I>importance</I> of <B>"
-                + standard
-                + "</B>,<BR>"
-                + "how important is <B><SIZE=+1>"
-                + factorList.get(i).getName()
-                + "</SIZE></B>?</HTML>");
-             if (importance == null || "".equals(importance)) {
-                 factorList.get(i).setRank(standard);
-             } else {
-                 factorList.get(i).setRank(Integer.valueOf(importance));
-             }
+            // Keep asking until input is blank (use default) or a valid integer
+            while (true) {
+                String importance = JOptionPane.showInputDialog(
+                    "<HTML>If <B><SIZE=+1>"
+                    + factorList.get(lastFactor).getName()
+                    + "</SIZE></B> has an <I>importance</I> of <B>"
+                    + baseline
+                    + "</B>,<BR>"
+                    + "how important is <B><SIZE=+1>"
+                    + factorList.get(i).getName()
+                    + "</SIZE></B> on a scale of 0.." + standard + "? (leave blank for default " + baseline + ")</HTML>");
+                if (importance == null || "".equals(importance)) {
+                    factorList.get(i).setRank(baseline);
+                    break;
+                }
+                try {
+                    int v = Integer.parseInt(importance);
+                    if (v < 0 || v > standard) {
+                        JOptionPane.showMessageDialog(null,
+                            "Please enter a whole number between 0 and " + standard + ".",
+                            "Invalid input",
+                            JOptionPane.WARNING_MESSAGE);
+                        continue;
+                    }
+                    factorList.get(i).setRank(v);
+                    break;
+                } catch (NumberFormatException nfe) {
+                    JOptionPane.showMessageDialog(null,
+                        "Please enter a whole number for importance, or leave blank to accept the default (" + baseline + ")",
+                        "Invalid input",
+                        JOptionPane.WARNING_MESSAGE);
+                }
+            }
         }
-        factorList.get(lastFactor).setRank(standard);
+        factorList.get(lastFactor).setRank(baseline);
     }
 
     @Override
@@ -87,31 +108,46 @@ public class JPGUI extends UserInterface {
         double[][] crossRankings = new double[alternatives.size()]
                                              [factors.size()];
         for (int i = 0; i < factors.size(); i++) {
-            int firstAlternative = 0;
-            crossRankings[firstAlternative][i] = standard;
-            for (int j = firstAlternative + 1; j < alternatives.size(); j++) {
+            StringBuilder header = new StringBuilder();
+            header.append("Considering factor: ").append(factors.get(i).getName());
+            for (int j = 0; j < alternatives.size(); j++) {
                 String rank = JOptionPane.showInputDialog(
-                    "<HTML>Considering <B><SIZE=+1>"
-                    + factors.get(i).getName()
-                    + "</SIZE></B> only,<BR>"
-                    + "if <B><SIZE=+1>"
-                    + alternatives.get(firstAlternative).getDescriptor()
-                    + "</SIZE></B> has a value of <B><SIZE=+1>"
-                    + standard
-                    + "</SIZE></B> "
-                    + ",<BR>"
-                    + "what value would you associate with <B><SIZE=+1>"
-                    + alternatives.get(j).getDescriptor()
-                    + "</SIZE></B><BR>"
-                    + "(a higher value is <I>more desirable</I>)?</HTML>");
+                    header.toString() + "\nEnter a value for '" + alternatives.get(j).getDescriptor() + "' on a scale 0.." + standard + " (default 10):");
                 if (rank == null || "".equals(rank)) {
-                    crossRankings[j][i] = standard;
+                    crossRankings[j][i] = 10.0;
                 } else {
-                    crossRankings[j][i] = Integer.valueOf(rank);
+                    while (true) {
+                        try {
+                            double v = Double.parseDouble(rank);
+                            if (v < 0 || v > standard) {
+                                rank = JOptionPane.showInputDialog(
+                                    "Please enter a numeric value between 0 and " + standard + " (or leave blank for default 10):",
+                                    rank);
+                                if (rank == null || "".equals(rank)) { crossRankings[j][i] = 10.0; break; }
+                                continue;
+                            }
+                            crossRankings[j][i] = v;
+                            break;
+                        } catch (NumberFormatException nfe) {
+                            rank = JOptionPane.showInputDialog(
+                                "Invalid input. Please enter a numeric value (or leave blank for default 10):",
+                                rank);
+                            if (rank == null || "".equals(rank)) {
+                                crossRankings[j][i] = 10.0;
+                                break;
+                            }
+                        }
+                    }
                 }
             }
         }
         return crossRankings;
+    }
+
+    @Override
+    public int getScale() {
+        // Force a 0-100 scale per user request.
+        return 100;
     }
 
     @Override
@@ -127,5 +163,13 @@ public class JPGUI extends UserInterface {
                                       s,
                                      "Decider Results",
                                      JOptionPane.INFORMATION_MESSAGE);
+        int choice = JOptionPane.showConfirmDialog(null,
+                                                   "Open decision log viewer?",
+                                                   "View Log",
+                                                   JOptionPane.YES_NO_OPTION,
+                                                   JOptionPane.QUESTION_MESSAGE);
+        if (choice == JOptionPane.YES_OPTION) {
+            DecisionLogViewer.showViewer(null);
+        }
     }
 }

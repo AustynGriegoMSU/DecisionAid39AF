@@ -84,6 +84,14 @@ public abstract class UserInterface {
                                                 int defaultValue);
 
     /**
+     * Ask the user what baseline scale to use for pairwise comparisons.
+     * For example, many users use 10 but any positive integer (e.g. 100 or 555)
+     * should be accepted.
+     * @return positive integer baseline to use
+     */
+    public abstract int getScale();
+
+    /**
      * Present the alternatives and their final rank ordering.
      * @param alternatives the collection of alternatives to be presented
      */

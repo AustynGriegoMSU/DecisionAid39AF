@@ -1,5 +1,11 @@
 import java.util.List;
 import java.util.Collections;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 /**
  * Decision support aid.
  * @author Dr. Jody Paul
@@ -30,14 +36,64 @@ public final class DecisionAid {
         ui = new JPGUI();  // Use graphical user interface
         // ui = new JPCUI();  // Use console user interface
         // ui = new AntCUI(); // Use console user interface for Ant
-        ui.showIntroduction();
-        alternatives = ui.getAlternatives();
-        factors = ui.getFactors();
-        ui.getFactorRankings(factors, STANDARD);
-        crossRankings = ui.getCrossRankings(alternatives, factors, STANDARD);
+    ui.showIntroduction();
+    alternatives = ui.getAlternatives();
+    factors = ui.getFactors();
+    int scale = ui.getScale();
+    ui.getFactorRankings(factors, scale);
+    crossRankings = ui.getCrossRankings(alternatives, factors, scale);
         calculateFinalScores(alternatives, factors, crossRankings);
         sortDescending(alternatives);
         ui.showResults(alternatives);
+        // Persist run to log for later review
+        saveRunLog(alternatives, factors, crossRankings);
+    }
+
+    /**
+     * Append a human-readable record of the run to reports/decision_log.txt.
+     * If the reports directory does not exist it will be created.
+     */
+    private static void saveRunLog(final List<Alternative> alternatives,
+                                   final List<Factor> factors,
+                                   final double[][] crossRankings) {
+        File reports = new File("reports");
+        if (!reports.exists()) {
+            reports.mkdirs();
+        }
+        String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        File runFile = new File(reports, "decision_" + timestamp + ".txt");
+        BufferedWriter bw = null;
+        try {
+            bw = new BufferedWriter(new FileWriter(runFile, false));
+            String time = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+            bw.write("--- DecisionAid run: " + time + " ---\n");
+            bw.write("Factors and ranks:\n");
+            for (Factor f : factors) {
+                bw.write("  " + f.getName() + " -> " + f.getRank() + "\n");
+            }
+            bw.write("Alternatives and final scores:\n");
+            for (Alternative a : alternatives) {
+                bw.write("  " + a.getDescriptor() + " == " + a.getFinalScore() + "\n");
+            }
+            bw.write("Cross-rankings (alternatives x factors):\n");
+            for (int i = 0; i < crossRankings.length; i++) {
+                bw.write("  " + alternatives.get(i).getDescriptor() + ": ");
+                for (int j = 0; j < crossRankings[i].length; j++) {
+                    bw.write(String.valueOf(crossRankings[i][j]));
+                    if (j < crossRankings[i].length - 1) {
+                        bw.write(",");
+                    }
+                }
+                bw.write("\n");
+            }
+            bw.write("\n");
+        } catch (IOException ioe) {
+            System.err.println("Unable to write decision run file: " + ioe.getMessage());
+        } finally {
+            if (bw != null) {
+                try { bw.close(); } catch (IOException e) { /* ignore */ }
+            }
+        }
     }
 
     /**

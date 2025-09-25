@@ -1,0 +1,11 @@
+--- DecisionAid run: 2025-09-25 17:39:43 ---
+Factors and ranks:
+  Cost -> 50
+  Value -> 100
+Alternatives and final scores:
+  Eat out == 100
+  Eat at homr == 97
+Cross-rankings (alternatives x factors):
+  Eat out: 70.0,33.0
+  Eat at homr: 10.0,70.0
+

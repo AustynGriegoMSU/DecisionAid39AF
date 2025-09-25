@@ -1,0 +1,13 @@
+--- DecisionAid run: 2025-09-25 17:33:34 ---
+Factors and ranks:
+  Friendly -> 75
+  Activity level -> 33
+  Cleanliness -> 60
+  Cost -> 50
+Alternatives and final scores:
+  Dog == 100
+  Cat == 72
+Cross-rankings (alternatives x factors):
+  Dog: 50.0,50.0,50.0,50.0
+  Cat: 33.0,44.0,50.0,25.0
+
